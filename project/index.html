@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>First Project</title>
+<style>
+  /* Import modern font */
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+  :root {
+    --color-bg: #fefefe;
+    --color-primary: #111827;
+    --color-secondary: #6b7280;
+    --color-accent: #2563eb;
+    --color-button-bg: #2563eb;
+    --color-button-hover: #1d4ed8;
+    --color-nav-bg: #ffffffcc;
+    --color-shadow: rgba(0, 0, 0, 0.05);
+    --border-radius: 0.75rem;
+    --transition-speed: 0.3s;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: var(--color-bg);
+    color: var(--color-secondary);
+    line-height: 1.6;
+  }
+
+  /* Navbar */
+  nav {
+    position: sticky;
+    top: 0;
+    background: var(--color-nav-bg);
+    backdrop-filter: saturate(180%) blur(10px);
+    box-shadow: 0 1px 4px var(--color-shadow);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+  }
+
+  nav .logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    user-select: none;
+  }
+
+  nav .nav-buttons {
+    display: flex;
+    gap: 1rem;
+  }
+
+  nav button {
+    background: transparent;
+    border: 2px solid var(--color-accent);
+    padding: 0.4rem 1rem;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    color: var(--color-accent);
+    cursor: pointer;
+    transition: background-color var(--transition-speed), color var(--transition-speed), transform var(--transition-speed);
+  }
+
+  nav button:hover,
+  nav button:focus {
+    background-color: var(--color-button-hover);
+    color: #fff;
+    transform: scale(1.05);
+    outline: none;
+  }
+
+  /* Container */
+  .container {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+  }
+
+  /* Heading */
+  h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    user-select: none;
+  }
+
+  /* Paragraph */
+  p {
+    font-size: 1.125rem;
+    max-width: 700px;
+    color: var(--color-secondary);
+    margin-bottom: 2rem;
+  }
+
+  /* Content with images */
+  .content-section {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .content-text {
+    flex: 1 1 400px;
+  }
+
+  .content-images {
+    flex: 1 1 300px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .content-images img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 10px var(--color-shadow);
+    transition: transform var(--transition-speed);
+    cursor: default;
+  }
+
+  .content-images img:hover {
+    transform: scale(1.05);
+  }
+
+  /* Links section */
+  .links-section {
+    margin-top: 3rem;
+  }
+
+  .links-section h2 {
+    font-size: 1.75rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    user-select: none;
+  }
+
+  .links-section ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .links-section a {
+    font-weight: 600;
+    color: var(--color-accent);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border-color var(--transition-speed);
+  }
+
+  .links-section a:hover,
+  .links-section a:focus {
+    border-color: var(--color-accent);
+    outline: none;
+  }
+
+  /* Interaction buttons */
+  .interaction-section {
+    margin-top: 3rem;
+  }
+
+  .interaction-section button {
+    background-color: var(--color-button-bg);
+    color: #fff;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    margin-right: 1rem;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+  }
+
+  .interaction-section button:hover,
+  .interaction-section button:focus {
+    background-color: var(--color-button-hover);
+    transform: scale(1.05);
+    outline: none;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .content-section {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .content-images {
+      justify-content: flex-start;
+    }
+  }
+</style>
+</head>
+<body>
+<nav role="navigation" aria-label="Main navigation">
+  <div class="logo">My Project</div>
+  <div class="nav-buttons">
+    <button type="button" onclick="alert('Home button clicked!')">Home</button>
+    <button type="button" onclick="alert('About button clicked!')">About</button>
+    <button type="button" onclick="alert('Contact button clicked!')">Contact</button>
+  </div>
+</nav>
+
+<main class="container" role="main">
+  <h1>First Project</h1>
+  <section class="content-section" aria-label="About HTML, CSS, and JavaScript">
+    <div class="content-text">
+      <p>
+        HTML, CSS, and JavaScript are the core technologies for building web pages. HTML structures the content,
+        CSS styles the appearance, and JavaScript provides interactivity and dynamic behaviors. Together, they create
+        engaging and responsive user experiences on the web.
+      </p>
+    </div>
+    <div class="content-images" aria-label="Images representing HTML, CSS, and JavaScript">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML5 logo" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS3 logo" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript logo" />
+    </div>
+  </section>
+
+  <section class="links-section" aria-label="Links to Wikipedia pages">
+    <h2>Learn More</h2>
+    <ul>
+      <li><a href="https://en.wikipedia.org/wiki/HTML" target="_blank" rel="noopener noreferrer">HTML on Wikipedia</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets" target="_blank" rel="noopener noreferrer">CSS on Wikipedia</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/JavaScript" target="_blank" rel="noopener noreferrer">JavaScript on Wikipedia</a></li>
+    </ul>
+  </section>
+
+  <section class="interaction-section" aria-label="Interactive buttons">
+    <button type="button" id="btn1">Click me for HTML info</button>
+    <button type="button" id="btn2">Click me for CSS info</button>
+    <button type="button" id="btn3">Click me for JavaScript info</button>
+  </section>
+</main>
+
+<script>
+  // Adding simple interaction via JS on buttons
+  document.getElementById('btn1').addEventListener('click', () => {
+    alert('HTML stands for HyperText Markup Language, used to structure web content.');
+  });
+  document.getElementById('btn2').addEventListener('click', () => {
+    alert('CSS stands for Cascading Style Sheets, used for styling web content.');
+  });
+  document.getElementById('btn3').addEventListener('click', () => {
+    alert('JavaScript is a programming language that adds interactivity to web pages.');
+  });
+</script>
+</body>
+</html>

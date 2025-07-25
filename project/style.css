@@ -1,0 +1,21 @@
+h1{
+    color: #0000ff;
+
+
+}
+
+header{
+    background-color: aqua;
+    background-size: auto;
+    background-position: center;
+
+}
+body{
+    background-color: hsl(270, 23%, 88%);
+}
+
+form{
+    box-shadow: 10px;
+    background-color: #0000ff;
+    
+}
